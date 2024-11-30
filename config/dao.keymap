@@ -20,6 +20,14 @@
 
 &mt { quick_tap_ms = <200>; };
 
+// tap -> c | hold -> ç | hold + shift -> Ç
+ZMK_BEHAVIOR(c_cedille_ht, hold_tap,
+       flavor = "tap-preferred";
+       tapping-term-ms = <175>;
+       global-quick-tap;
+       bindings = <&fr_c_cedilla>, <&kp>;
+)
+
 / {
     chosen {
         zmk,matrix_transform = &default_transform;
