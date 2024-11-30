@@ -44,8 +44,8 @@ ZMK_BEHAVIOR(c_cedille_ht, hold_tap,
         default_layer {
             bindings = <
 &mt LGUI FR_DLR    &kp FR_A  &kp FR_Z  &kp FR_E        &kp FR_R            &kp FR_T        &kp FR_Y        &kp FR_U           &kp FR_I        &kp FR_O    &kp FR_P     &kp FR_CIRC
-&mt LCTRL GRAVE  &kp Q  &kp S  &kp D        &kp F            &kp G        &kp H        &kp J           &kp K        &kp L    &kp M     &mt RCTRL SQT
-&mt LALT MINUS   &kp W  &kp X  &kp C        &kp V            &kp B        &kp N        &kp SEMICOLON   &kp COMMA    &kp DOT  &kp FSLH  &mt RALT BSLH
+&mt LCTRL FR_SUP2  &kp FR_Q  &kp FR_S  &kp FR_D        &kp FR_F            &kp FR_G        &kp FR_H        &kp FR_J           &kp FR_K        &kp FR_L    &kp FR_M     &mt RCTRL FR_UGRV
+&mt LALT FR_LABK   &kp FR_W  &kp FR_X  &kp FR_C        &kp FR_V            &kp FR_B        &kp FR_N        &kp FR_SCLN   &kp FR_COLN    &kp FR_EXLM  &none  &mt RALT FR_DIAE
                                &lt RSE TAB  &mt LSHFT SPACE  &lt LWR RET  &lt LWR ESC  &mt RSHFT BSPC  &lt RSE DEL
             >;
         };
