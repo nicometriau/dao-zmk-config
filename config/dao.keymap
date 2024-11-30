@@ -10,6 +10,7 @@
 #include "../zmk-helpers/include/zmk-helpers/helper.h"
 #include "../zmk-helpers/include/zmk-helpers/key-labels/42.h"
 #include "../zmk-helpers/include/zmk-helpers/unicode-chars/french.dtsi"
+#include "./keymap_french.h"
 
 #define DEF 0
 #define LWR 1
