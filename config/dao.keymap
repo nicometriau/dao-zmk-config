@@ -57,7 +57,7 @@ ZMK_BEHAVIOR(ht_a_with_circumflex, hold_tap,
         default_layer {
             bindings = <
 &mt LGUI FR_SUP2  &mt FR_AGRV FR_A  &kp FR_Z  &kp FR_E     &kp FR_R         &kp FR_T        &kp FR_Y     &kp FR_U        &kp FR_I      &kp FR_O     &kp FR_P     &kp FR_CIRC
-&mt LCTRL FR_DLR  &ht_a_with_circumflex FR_A  &kp FR_S  &kp FR_D     &kp FR_F         &kp FR_G        &kp FR_H     &kp FR_J        &kp FR_K      &kp FR_L     &kp FR_M     &mt RCTRL FR_UGRV
+&mt LCTRL FR_DLR  &ht_a_with_circumflex &kp FR_A  &kp FR_S  &kp FR_D     &kp FR_F         &kp FR_G        &kp FR_H     &kp FR_J        &kp FR_K      &kp FR_L     &kp FR_M     &mt RCTRL FR_UGRV
 &mt LALT FR_LABK  &kp FR_W  &kp FR_X  &mt FR_CCED FR_C     &kp FR_V         &kp FR_B        &kp FR_N     &kp FR_COMM     &kp FR_SCLN   &kp FR_COLN  &kp FR_EXLM  &mt RALT FR_DIAE
                                       &lt RSE TAB  &mt LSHFT SPACE  &lt LWR RET     &lt LWR ESC  &mt RSHFT BSPC  &lt RSE DEL
             >;
