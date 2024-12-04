@@ -29,16 +29,11 @@ ZMK_BEHAVIOR(c_cedille_ht, hold_tap,
        bindings = <&fr_c_cedilla>, <&kp>;
 )
 
-/ {
-    behaviors {
-        a_with_circumflex: behavior {
-            compatible = "zmk,behavior-hold-tap";
-            label = "Hold â / Tap a";
-            bindings = <&kp FR_A &kp CIRCUMFLEX>;
-            tapping-term-ms = <175>;  // Adjust as needed
-        };
-    };
-};
+ZMK_BEHAVIOR(a_with_circumflex, macro,
+	wait-ms = <0>;
+	tap-ms = <5>;
+	bindings = <&kp FR_CIRC &kp FR_A>;
+)
 
 / {
     chosen {
