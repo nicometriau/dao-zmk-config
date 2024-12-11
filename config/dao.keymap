@@ -13,7 +13,7 @@
 #include "./keymap_french.h"
 
 #define DEF 0
-#define LWR 1
+#define NUM 1
 #define RSE 2
 #define ADJ 3
 
@@ -21,6 +21,7 @@
 
 &mt { quick_tap_ms = <200>; };
 
+// accentuated chars
 ZMK_BEHAVIOR(a_with_circumflex, macro,
 	wait-ms = <0>;
 	tap-ms = <5>;
@@ -86,6 +87,45 @@ ZMK_BEHAVIOR(ht_u_diae, hold_tap,
        bindings = <&u_with_diaeresis>, <&kp>;
 )
 
+ZMK_BEHAVIOR(i_with_circumflex, macro,
+	wait-ms = <0>;
+	tap-ms = <5>;
+	bindings = <&kp FR_CIRC &kp FR_U>;
+)
+
+ZMK_BEHAVIOR(ht_i_circ, hold_tap,
+       flavor = "tap-preferred";
+       tapping-term-ms = <175>;
+       global-quick-tap;
+       bindings = <&i_with_circumflex>, <&kp>;
+)
+
+ZMK_BEHAVIOR(i_with_diaeresis, macro,
+	wait-ms = <0>;
+	tap-ms = <5>;
+	bindings = <&kp FR_DIAE &kp FR_U>;
+)
+
+ZMK_BEHAVIOR(ht_i_diae, hold_tap,
+       flavor = "tap-preferred";
+       tapping-term-ms = <175>;
+       global-quick-tap;
+       bindings = <&i_with_diaeresis>, <&kp>;
+)
+
+ZMK_BEHAVIOR(o_with_circumflex, macro,
+	wait-ms = <0>;
+	tap-ms = <5>;
+	bindings = <&kp FR_CIRC &kp FR_U>;
+)
+
+ZMK_BEHAVIOR(ht_o_circ, hold_tap,
+       flavor = "tap-preferred";
+       tapping-term-ms = <175>;
+       global-quick-tap;
+       bindings = <&o_with_circumflex>, <&kp>;
+)
+
 / {
     chosen {
         zmk,matrix_transform = &default_transform;
@@ -100,19 +140,19 @@ ZMK_BEHAVIOR(ht_u_diae, hold_tap,
 
         default_layer {
             bindings = <
-&mt LGUI FR_SUP2  &mt FR_AGRV FR_A     &mt FR_EACU FR_Z  &kp FR_E          &mt FR_EGRV FR_R     &kp FR_T        &kp FR_Y             &mt FR_UGRV FR_U  &kp FR_I             &kp FR_O     &kp FR_P     &kp FR_CIRC
-&mt LCTRL FR_DLR  &ht_a_circ &kp FR_Q  &ht_e_circ &kp FR_S   &kp FR_D      &ht_e_diae &kp FR_F  &kp FR_G        &ht_u_circ &kp FR_H  &kp FR_J          &ht_u_diae &kp FR_K  &kp FR_L     &kp FR_M     &mt RCTRL FR_UGRV
-&mt LALT FR_LABK  &kp FR_W             &kp FR_X          &mt FR_CCED FR_C  &kp FR_V             &kp FR_B        &kp FR_N             &kp FR_COMM       &kp FR_SCLN          &kp FR_COLN  &kp FR_EXLM  &mt RALT FR_DIAE
-                                      &lt RSE TAB  &mt LSHFT SPACE  &lt LWR RET     &lt LWR ESC  &mt RSHFT BSPC  &lt RSE DEL
+&mt LGUI FR_SUP2  &mt FR_AGRV FR_A     &mt FR_EACU FR_Z  &kp FR_E          &mt FR_EGRV FR_R     &kp FR_T        &kp FR_Y             &mt FR_UGRV FR_U  &ht_i_circ &kp FR_I  &ht_o_circ &kp FR_O  &kp FR_P     &kp FR_CIRC
+&mt LCTRL FR_DLR  &ht_a_circ &kp FR_Q  &ht_e_circ &kp FR_S   &kp FR_D      &ht_e_diae &kp FR_F  &kp FR_G        &ht_u_circ &kp FR_H  &kp FR_J          &ht_u_diae &kp FR_K  &ht_i_diae &kp FR_L  &kp FR_M     &mt RCTRL FR_UGRV
+&mt LALT FR_LABK  &kp FR_W             &kp FR_X          &mt FR_CCED FR_C  &kp FR_V             &kp FR_B        &kp FR_N             &kp FR_COMM       &kp FR_SCLN          &kp FR_COLN          &kp FR_EXLM  &mt RALT FR_DIAE
+                                                         &lt RSE TAB       &mt LSHFT SPACE      &lt NUM RET     &lt NUM ESC          &mt RSHFT BSPC    &lt RSE DEL
             >;
         };
 
-        lower_layer {
+        number_layer {
             bindings = <
-&mt LGUI FR_0  &none  &kp FR_EQL  &kp FR_PLUS  &kp FR_MINS  &none      &none     &kp FR_7  &kp FR_8  &kp FR_9  &none  &none
-&mt LCTRL FR_0 &none  &none       &kp FR_ASTR  &kp FR_SLSH  &none      &none     &kp FR_4  &kp FR_5  &kp FR_6  &none  &mt RCTRL FR_0
-&mt LALT FR_0  &none  &none       &kp FR_DOT   &kp FR_COMM  &none      &kp FR_0  &kp FR_1  &kp FR_2  &kp FR_3  &none  &mt RALT FR_0
-                                  &lt ADJ TAB  &trans       &trans     &trans    &trans    &lt ADJ DEL
+&mt LGUI FR_0  &none  &kp FR_EQL   &kp FR_PLUS  &kp FR_MINS  &kp FR_EURO     &none     &kp FR_7  &kp FR_8  &kp FR_9  &none  &none
+&mt LCTRL FR_0 &none  &kp FR_PERC  &kp FR_ASTR  &kp FR_SLSH  &kp FR_DLR      &none     &kp FR_4  &kp FR_5  &kp FR_6  &none  &mt RCTRL FR_0
+&mt LALT FR_0  &none  &kp FR_CURR  &kp FR_DOT   &kp FR_COMM  &kp FR_PND      &none     &kp FR_1  &kp FR_2  &kp FR_3  &none  &mt RALT FR_0
+                                   &lt ADJ TAB  &trans       &trans     &trans    &kp FR_0  &lt ADJ DEL
             >;
         };
 
