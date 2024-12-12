@@ -152,12 +152,12 @@ ZMK_BEHAVIOR(test2, hold_tap,
        flavor = "tap-preferred";
        tapping-term-ms = <175>;
        global-quick-tap;
-       bindings = <&i_with_diaeresis>, <&kp>;
+       bindings = <&kp>, <&kp>;
 )
 
 ZMK_BEHAVIOR(test3, tap_dance,
     tapping-term-ms = <175>;
-    bindings = <&test2 &kp D>, <&kp C>;
+    bindings = <&test2 &kp A &kp D>, <&kp C>;
 )
 
 / {
