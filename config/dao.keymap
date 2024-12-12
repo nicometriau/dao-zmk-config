@@ -150,7 +150,7 @@ ZMK_BEHAVIOR(backticks, macro,
 
 ZMK_BEHAVIOR(test2, tap_dance,
     tapping-term-ms = <175>;
-    bindings = <&kp A>, <&kp C>;
+    bindings = <&ht_o_circ &kp E>, <&kp C>;
 )
 
 / {
@@ -169,7 +169,7 @@ ZMK_BEHAVIOR(test2, tap_dance,
             bindings = <
 &mt LGUI FR_SUP2   &mt FR_AGRV FR_A     &mt FR_EACU FR_Z     &kp FR_E          &mt FR_EGRV FR_R     &kp FR_T        &kp FR_Y             &mt FR_UGRV FR_U  &ht_i_circ &kp FR_I  &ht_o_circ &kp FR_O  &kp FR_P     &kp FR_CIRC
 &mt LCTRL FR_QUOT  &ht_a_circ &kp FR_Q  &ht_e_circ &kp FR_S  &kp FR_D          &ht_e_diae &kp FR_F  &kp FR_G        &ht_u_circ &kp FR_H  &kp FR_J          &ht_u_diae &kp FR_K  &ht_i_diae &kp FR_L  &kp FR_M     &mt RCTRL FR_UGRV
-&mt LALT FR_LABK   &test2             &kp FR_X             &mt FR_CCED FR_C  &kp FR_V             &kp FR_B        &kp FR_N             &kp FR_COMM       &kp FR_SCLN          &kp FR_COLN          &kp FR_EXLM  &mt RALT FR_0
+&mt LALT FR_LABK   &ht_o_circ &kp D         &kp FR_X             &mt FR_CCED FR_C  &kp FR_V             &kp FR_B        &kp FR_N             &kp FR_COMM       &kp FR_SCLN          &kp FR_COLN          &kp FR_EXLM  &mt RALT FR_0
                                                             &lt SYM TAB       &mt LSHFT SPACE      &lt NUM RET     &lt NUM ESC          &mt RSHFT BSPC    &lt SYM DEL
             >;
         };
