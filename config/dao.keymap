@@ -12,10 +12,16 @@
 #include "../zmk-helpers/include/zmk-helpers/unicode-chars/french.dtsi"
 #include "./keymap_french.h"
 
+#define ______ &trans
+#define xxxxxx &none
+
 #define DEF 0
 #define NUM 1
 #define SYM 2
 #define ADJ 3
+#define DLC 4
+#define DRC 5
+
 
 &lt { quick_tap_ms = <200>; };
 
@@ -191,7 +197,7 @@ ZMK_BEHAVIOR(custo_exlm, tap_dance,
 };
 
 ZMK_LAYER(default_layer,
-    &mt LGUI FR_SUP2   &mt FR_AGRV FR_A     &mt FR_EACU FR_Z     &kp FR_E          &mt FR_EGRV FR_R     &kp FR_T        &kp FR_Y             &mt FR_UGRV FR_U  &ht_i_circ &kp FR_I  &ht_o_circ &kp FR_O  &kp FR_P     &none
+    &mt LGUI FR_SUP2   &mt FR_AGRV FR_A     &mt FR_EACU FR_Z     &lt DLC FR_E          &mt FR_EGRV FR_R     &kp FR_T        &kp FR_Y             &mt FR_UGRV FR_U  &lt DRC FR_I  &ht_o_circ &kp FR_O  &kp FR_P     &none
     &mt LCTRL FR_QUOT  &ht_a_circ &kp FR_Q  &ht_e_circ &kp FR_S  &kp FR_D          &ht_e_diae &kp FR_F  &kp FR_G        &ht_u_circ &kp FR_H  &kp FR_J          &ht_u_diae &kp FR_K  &ht_i_diae &kp FR_L  &kp FR_M     &mt RCTRL FR_0
     &mt LALT FR_LABK   &kp FR_W             &kp FR_X             &mt FR_CCED FR_C  &kp FR_V             &kp FR_B        &kp FR_N             &custo_comm       &custo_scln          &custo_coln          &custo_exlm  &mt RALT FR_0
                                                                 &lt SYM TAB       &mt LSHFT SPACE      &lt NUM RET     &lt NUM ESC          &mt RSHFT BSPC    &lt SYM DEL
@@ -216,4 +222,18 @@ ZMK_LAYER(adjust_layer,
     &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
     &sys_reset   &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &sys_reset
                                             &trans        &none         &trans        &trans        &none         &trans
+)
+
+ZMK_LAYER(diac_lcirc,
+    ______  ______  ______  xxxxxx  ______  ______     ______  ______  &i_with_circumflex  ______  ______  ______
+    ______  ______  ______  ______  ______  ______     ______  ______  ______              ______  ______  ______
+    ______  ______  ______  ______  ______  ______     ______  ______  ______              ______  ______  ______
+                            ______  ______  ______     ______  ______  ______
+)
+
+ZMK_LAYER(diac_rcirc,
+    ______  ______  ______  &e_with_circumflex  ______  ______     ______  ______  ______  ______  ______  ______
+    ______  ______  ______  ______              ______  ______     ______  ______  ______  ______  ______  ______
+    ______  ______  ______  ______              ______  ______     ______  ______  ______  ______  ______  ______
+                            ______              ______  ______     ______  ______  ______
 )
