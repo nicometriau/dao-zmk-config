@@ -19,8 +19,13 @@
 #define NUM 1
 #define SYM 2
 #define ADJ 3
-#define DLC 4
-#define DRC 5
+#define DLD 4
+#define DRD 5
+#define DLG 6
+#define DRG 7
+#define DLC 8
+#define DRC 9
+#define DRA 10
 
 
 &lt { quick_tap_ms = <200>; };
@@ -28,7 +33,7 @@
 &mt { quick_tap_ms = <200>; };
 
 // accentuated chars
-ZMK_BEHAVIOR(a_with_circumflex, macro,
+ZMK_BEHAVIOR(a_circ, macro,
 	wait-ms = <0>;
 	tap-ms = <5>;
 	bindings = <&kp FR_CIRC &kp FR_A>;
@@ -38,10 +43,16 @@ ZMK_BEHAVIOR(ht_a_circ, hold_tap,
        flavor = "tap-preferred";
        tapping-term-ms = <175>;
        global-quick-tap;
-       bindings = <&a_with_circumflex>, <&kp>;
+       bindings = <&a_circ>, <&kp>;
 )
 
-ZMK_BEHAVIOR(e_with_circumflex, macro,
+ZMK_BEHAVIOR(a_diae, macro,
+	wait-ms = <0>;
+	tap-ms = <5>;
+	bindings = <&kp FR_DIAE &kp FR_A>;
+)
+
+ZMK_BEHAVIOR(e_circ, macro,
 	wait-ms = <0>;
 	tap-ms = <5>;
 	bindings = <&kp FR_CIRC &kp FR_E>;
@@ -51,10 +62,10 @@ ZMK_BEHAVIOR(ht_e_circ, hold_tap,
        flavor = "tap-preferred";
        tapping-term-ms = <175>;
        global-quick-tap;
-       bindings = <&e_with_circumflex>, <&kp>;
+       bindings = <&e_circ>, <&kp>;
 )
 
-ZMK_BEHAVIOR(e_with_diaeresis, macro,
+ZMK_BEHAVIOR(e_diae, macro,
 	wait-ms = <0>;
 	tap-ms = <5>;
 	bindings = <&kp FR_DIAE &kp FR_E>;
@@ -64,10 +75,10 @@ ZMK_BEHAVIOR(ht_e_diae, hold_tap,
        flavor = "tap-preferred";
        tapping-term-ms = <175>;
        global-quick-tap;
-       bindings = <&e_with_diaeresis>, <&kp>;
+       bindings = <&e_diae>, <&kp>;
 )
 
-ZMK_BEHAVIOR(u_with_circumflex, macro,
+ZMK_BEHAVIOR(u_circ, macro,
 	wait-ms = <0>;
 	tap-ms = <5>;
 	bindings = <&kp FR_CIRC &kp FR_U>;
@@ -77,10 +88,10 @@ ZMK_BEHAVIOR(ht_u_circ, hold_tap,
        flavor = "tap-preferred";
        tapping-term-ms = <175>;
        global-quick-tap;
-       bindings = <&u_with_circumflex>, <&kp>;
+       bindings = <&u_circ>, <&kp>;
 )
 
-ZMK_BEHAVIOR(u_with_diaeresis, macro,
+ZMK_BEHAVIOR(u_diae, macro,
 	wait-ms = <0>;
 	tap-ms = <5>;
 	bindings = <&kp FR_DIAE &kp FR_U>;
@@ -90,10 +101,10 @@ ZMK_BEHAVIOR(ht_u_diae, hold_tap,
        flavor = "tap-preferred";
        tapping-term-ms = <175>;
        global-quick-tap;
-       bindings = <&u_with_diaeresis>, <&kp>;
+       bindings = <&u_diae>, <&kp>;
 )
 
-ZMK_BEHAVIOR(i_with_circumflex, macro,
+ZMK_BEHAVIOR(i_circ, macro,
 	wait-ms = <0>;
 	tap-ms = <5>;
 	bindings = <&kp FR_CIRC &kp FR_I>;
@@ -103,10 +114,10 @@ ZMK_BEHAVIOR(ht_i_circ, hold_tap,
        flavor = "tap-preferred";
        tapping-term-ms = <175>;
        global-quick-tap;
-       bindings = <&i_with_circumflex>, <&kp>;
+       bindings = <&i_circ>, <&kp>;
 )
 
-ZMK_BEHAVIOR(i_with_diaeresis, macro,
+ZMK_BEHAVIOR(i_diae, macro,
 	wait-ms = <0>;
 	tap-ms = <5>;
 	bindings = <&kp FR_DIAE &kp FR_I>;
@@ -116,10 +127,10 @@ ZMK_BEHAVIOR(ht_i_diae, hold_tap,
        flavor = "tap-preferred";
        tapping-term-ms = <175>;
        global-quick-tap;
-       bindings = <&i_with_diaeresis>, <&kp>;
+       bindings = <&i_diae>, <&kp>;
 )
 
-ZMK_BEHAVIOR(o_with_circumflex, macro,
+ZMK_BEHAVIOR(o_circ, macro,
 	wait-ms = <0>;
 	tap-ms = <5>;
 	bindings = <&kp FR_CIRC &kp FR_O>;
@@ -129,7 +140,13 @@ ZMK_BEHAVIOR(ht_o_circ, hold_tap,
        flavor = "tap-preferred";
        tapping-term-ms = <175>;
        global-quick-tap;
-       bindings = <&o_with_circumflex>, <&kp>;
+       bindings = <&o_circ>, <&kp>;
+)
+
+ZMK_BEHAVIOR(o_diae, macro,
+	wait-ms = <0>;
+	tap-ms = <5>;
+	bindings = <&kp FR_DIAE &kp FR_O>;
 )
 
 // open / close brackets
@@ -197,10 +214,10 @@ ZMK_BEHAVIOR(custo_exlm, tap_dance,
 };
 
 ZMK_LAYER(default_layer,
-    &mt LGUI FR_SUP2   &mt FR_AGRV FR_A     &mt FR_EACU FR_Z     &lt DLC FR_E          &mt FR_EGRV FR_R     &kp FR_T        &kp FR_Y             &mt FR_UGRV FR_U  &lt DRC FR_I  &ht_o_circ &kp FR_O  &kp FR_P     &none
-    &mt LCTRL FR_QUOT  &ht_a_circ &kp FR_Q  &ht_e_circ &kp FR_S  &kp FR_D          &ht_e_diae &kp FR_F  &kp FR_G        &ht_u_circ &kp FR_H  &kp FR_J          &ht_u_diae &kp FR_K  &ht_i_diae &kp FR_L  &kp FR_M     &mt RCTRL FR_0
-    &mt LALT FR_LABK   &kp FR_W             &kp FR_X             &mt FR_CCED FR_C  &kp FR_V             &kp FR_B        &kp FR_N             &custo_comm       &custo_scln          &custo_coln          &custo_exlm  &mt RALT FR_0
-                                                                &lt SYM TAB       &mt LSHFT SPACE      &lt NUM RET     &lt NUM ESC          &mt RSHFT BSPC    &lt SYM DEL
+    &mt LGUI FR_SUP2    &lt DLD FR_A   &lt DLG FR_Z    &lt DLC FR_E       &kp FR_R          &kp FR_T        &kp FR_Y      &lt DRA FR_U     &lt DRC FR_I  &lt DRG FR_O   &lt DRD FR_P   &none
+    &mt LCTRL FR_QUOT   &kp FR_Q       &kp FR_S        &kp FR_D           &kp FR_F          &kp FR_G        &kp FR_H      &kp FR_J         &kp FR_K      &kp FR_L       &kp FR_M       &mt RCTRL FR_0
+    &mt LALT FR_LABK    &kp FR_W       &kp FR_X        &mt FR_CCED FR_C   &kp FR_V          &kp FR_B        &kp FR_N      &custo_comm      &custo_scln   &custo_coln    &custo_exlm    &mt RALT FR_0
+                                                       &lt SYM TAB        &mt LSHFT SPACE   &lt NUM RET     &lt NUM ESC   &mt RSHFT BSPC   &lt SYM DEL
 )
 
 ZMK_LAYER(number_layer,
@@ -211,9 +228,9 @@ ZMK_LAYER(number_layer,
 )
 
 ZMK_LAYER(symbol_layer,
-    &mt LGUI FR_0   &parentheses     &dbquotes   &none  &none  &kp C_BRI_UP       &kp C_VOL_UP  &kp HOME  &kp UP_ARROW     &kp PG_UP  &kp SLCK         &kp CLCK
-    &mt LCTRL FR_0  &squarebrackets  &sgquotes   &none  &none  &kp C_BRI_MIN      &kp C_MUTE    &kp LEFT  &kp DOWN         &kp RIGHT  &kp INS          &mt RCTRL K_APP
-    &kp LALT        &curlybrackets   &backticks  &none  &none  &kp C_BRI_DN       &kp C_VOL_DN  &kp END   &kp PRINTSCREEN  &kp PG_DN  &kp PAUSE_BREAK  &kp RALT
+    &mt LGUI FR_0   &none  &none  &parentheses     &dbquotes   &kp C_BRI_UP       &kp C_VOL_UP  &kp HOME  &kp UP_ARROW     &kp PG_UP  &kp SLCK         &kp CLCK
+    &mt LCTRL FR_0  &none  &none  &squarebrackets  &sgquotes   &kp C_BRI_MIN      &kp C_MUTE    &kp LEFT  &kp DOWN         &kp RIGHT  &kp INS          &mt RCTRL K_APP
+    &kp LALT        &none  &none  &curlybrackets   &backticks  &kp C_BRI_DN       &kp C_VOL_DN  &kp END   &kp PRINTSCREEN  &kp PG_DN  &kp PAUSE_BREAK  &kp RALT
                                                 &trans     &trans     &lt ADJ RET      &lt ADJ ESC   &trans    &trans
 )
 
@@ -224,16 +241,51 @@ ZMK_LAYER(adjust_layer,
                                             &trans        &none         &trans        &trans        &none         &trans
 )
 
+ZMK_LAYER(diac_ldiae,
+    ______   xxxxxx   ______   ______   ______   ______     ______   &u_diae  &i_diae  &o_diae  ______   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+                               ______   ______   ______     ______   ______   ______
+)
+
+ZMK_LAYER(diac_rdiae,
+    ______   &a_diae  ______   &e_diae  ______   ______     ______   ______   ______   ______   xxxxxx   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+                               ______   ______   ______     ______   ______   ______
+)
+
+ZMK_LAYER(diac_lgrav,
+    ______   ______   xxxxxx   ______   ______   ______     ______   &kp FR_UGRV  ______   ______   ______   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+                               ______   ______   ______     ______   ______   ______
+)
+
+ZMK_LAYER(diac_rgrav,
+    ______   &kp FR_AGRV  ______   &kp FR_EGRV  ______   ______     ______   ______   ______   xxxxxx   ______   ______
+    ______   ______       ______   ______       ______   ______     ______   ______   ______   ______   ______   ______
+    ______   ______       ______   ______       ______   ______     ______   ______   ______   ______   ______   ______
+                                   ______       ______   ______     ______   ______   ______
+)
+
 ZMK_LAYER(diac_lcirc,
-    ______  ______  ______  xxxxxx  ______  ______     ______  ______  &i_with_circumflex  ______  ______  ______
-    ______  ______  ______  ______  ______  ______     ______  ______  ______              ______  ______  ______
-    ______  ______  ______  ______  ______  ______     ______  ______  ______              ______  ______  ______
-                            ______  ______  ______     ______  ______  ______
+    ______   ______   ______   xxxxxx   ______   ______     ______   &u_circ  &i_circ  &o_circ  ______   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+                               ______   ______   ______     ______   ______   ______
 )
 
 ZMK_LAYER(diac_rcirc,
-    ______  ______  ______  &e_with_circumflex  ______  ______     ______  ______  ______  ______  ______  ______
-    ______  ______  ______  ______              ______  ______     ______  ______  ______  ______  ______  ______
-    ______  ______  ______  ______              ______  ______     ______  ______  ______  ______  ______  ______
-                            ______              ______  ______     ______  ______  ______
+    ______   &a_circ  ______   &e_circ  ______   ______     ______   ______   ______   ______   ______   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+                               ______   ______   ______     ______   ______   ______
+)
+
+ZMK_LAYER(diac_racut,
+    ______   ______   ______   &kp FR_EACU  ______   ______     ______   ______   ______   ______   ______   ______
+    ______   ______   ______   ______       ______   ______     ______   ______   ______   ______   ______   ______
+    ______   ______   ______   ______       ______   ______     ______   ______   ______   ______   ______   ______
+                               ______       ______   ______     ______   ______   ______
 )
