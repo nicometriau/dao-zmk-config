@@ -27,6 +27,9 @@
 #define DRC 9
 #define DRA 10
 
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5  // left-hand keys
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // right-hand keys
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                                  // thumb keys
 
 &lt { quick_tap_ms = <200>; };
 
@@ -205,6 +208,16 @@ ZMK_BEHAVIOR(custo_exlm, tap_dance,
     bindings = <&mt FR_SECT FR_EXLM>, <&kp FR_TILD>;
 )
 
+// home-row mods
+ZMK_HOLD_TAP(lh_pht,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    require-prior-idle-ms = <150>;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
+    hold-trigger-on-release;
+    bindings = <&kp>, <&kp>;
+)
+
 / {
     chosen {
         zmk,matrix_transform = &default_transform;
@@ -214,10 +227,10 @@ ZMK_BEHAVIOR(custo_exlm, tap_dance,
 };
 
 ZMK_LAYER(default_layer,
-    &mt LGUI FR_SUP2    &lt DLD FR_A   &lt DLG FR_Z    &lt DLC FR_E       &kp FR_R          &kp FR_T        &kp FR_Y      &lt DRA FR_U     &lt DRC FR_I  &lt DRG FR_O   &lt DRD FR_P   &none
-    &mt LCTRL FR_QUOT   &kp FR_Q       &kp FR_S        &kp FR_D           &kp FR_F          &kp FR_G        &kp FR_H      &kp FR_J         &kp FR_K      &kp FR_L       &kp FR_M       &mt RCTRL FR_0
-    &mt LALT FR_LABK    &kp FR_W       &kp FR_X        &mt FR_CCED FR_C   &kp FR_V          &kp FR_B        &kp FR_N      &custo_comm      &custo_scln   &custo_coln    &custo_exlm    &mt RALT FR_0
-                                                       &lt SYM TAB        &mt LSHFT SPACE   &lt NUM RET     &lt NUM ESC   &mt RSHFT BSPC   &lt SYM DEL
+    &mt LGUI FR_SUP2    &lt DLD FR_A        &lt DLG FR_Z        &lt DLC FR_E         &kp FR_R             &kp FR_T        &kp FR_Y      &lt DRA FR_U     &lt DRC FR_I     &lt DRG FR_O    &lt DRD FR_P   &none
+    &mt LCTRL FR_QUOT   &lh_pht LGUI FR_Q   &lh_pht LALT FR_S   &lh_pht LCTRL FR_D   &lh_pht LSHFT FR_F   &kp FR_G        &kp FR_H      &mt RSHFT FR_J   &mt RCTRL FR_K   &mt RALT FR_L   &mt RGUI FR_M       &mt RCTRL FR_0
+    &mt LALT FR_LABK    &kp FR_W            &kp FR_X            &mt FR_CCED FR_C     &kp FR_V             &kp FR_B        &kp FR_N      &custo_comm      &custo_scln      &custo_coln     &custo_exlm    &mt RALT FR_0
+                                                                &lt SYM TAB          &mt LSHFT SPACE      &lt NUM RET     &lt NUM ESC   &mt RSHFT BSPC   &lt SYM DEL
 )
 
 ZMK_LAYER(number_layer,
