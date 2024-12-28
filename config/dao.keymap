@@ -227,9 +227,9 @@ ZMK_HOLD_TAP(lh_pht,
 };
 
 ZMK_LAYER(default_layer,
-    &mt LGUI FR_SUP2    &lt DLD FR_A        &lt DLG FR_Z        &lt DLC FR_E         &kp FR_R             &kp FR_T        &kp FR_Y      &lt DRA FR_U     &lt DRC FR_I     &lt DRG FR_O    &lt DRD FR_P   &none
-    &mt LCTRL FR_QUOT   &lh_pht LGUI FR_Q   &lh_pht LALT FR_S   &lh_pht LCTRL FR_D   &lh_pht LSHFT FR_F   &kp FR_G        &kp FR_H      &mt RSHFT FR_J   &mt RCTRL FR_K   &mt RALT FR_L   &mt RGUI FR_M       &mt RCTRL FR_0
-    &mt LALT FR_LABK    &kp FR_W            &kp FR_X            &mt FR_CCED FR_C     &kp FR_V             &kp FR_B        &kp FR_N      &custo_comm      &custo_scln      &custo_coln     &custo_exlm    &mt RALT FR_0
+    &mt LGUI FR_SUP2    &lt DLD FR_Q        &lt DLG FR_W        &lt DLC FR_F         &kp FR_P             &kp FR_B        &kp FR_J      &lt DRA FR_L     &lt DRC FR_U     &lt DRG FR_Y    &custo_exlm     &none
+    &mt LCTRL FR_QUOT   &lh_pht LGUI FR_A   &lh_pht LALT FR_R   &lh_pht LCTRL FR_S   &lh_pht LSHFT FR_T   &kp FR_G        &kp FR_K      &mt RSHFT FR_N   &mt RCTRL FR_E   &mt RALT FR_I   &mt RGUI FR_O   &mt RCTRL FR_0
+    &mt LALT FR_LABK    &kp FR_Z            &kp FR_X            &mt FR_CCED FR_C     &kp FR_D             &kp FR_V        &kp FR_M      &kp FR_H         &custo_comm      &custo_scln     &custo_coln     &mt RALT FR_0
                                                                 &lt SYM TAB          &mt LSHFT SPACE      &lt NUM RET     &lt NUM ESC   &mt RSHFT BSPC   &lt SYM DEL
 )
 
