@@ -230,21 +230,21 @@ ZMK_LAYER(default_layer,
     &mt LGUI FR_SUP2    &lt DLD FR_Q        &lt DLG FR_W        &lt DLC FR_F         &kp FR_P             &kp FR_B        &kp FR_J      &lt DRA FR_L     &lt DRC FR_U     &lt DRG FR_Y    &custo_exlm     &none
     &mt LCTRL FR_QUOT   &lh_pht LGUI FR_A   &lh_pht LALT FR_R   &lh_pht LCTRL FR_S   &lh_pht LSHFT FR_T   &kp FR_G        &kp FR_K      &mt RSHFT FR_N   &mt RCTRL FR_E   &mt RALT FR_I   &mt RGUI FR_O   &mt RCTRL FR_0
     &mt LALT FR_LABK    &kp FR_Z            &kp FR_X            &mt FR_CCED FR_C     &kp FR_D             &kp FR_V        &kp FR_M      &kp FR_H         &custo_comm      &custo_scln     &custo_coln     &mt RALT FR_0
-                                                                &lt SYM TAB          &mt LSHFT SPACE      &lt NUM RET     &lt NUM ESC   &mt RSHFT BSPC   &lt SYM DEL
+                                                                &lt SYM TAB          &mt LSHFT BSPC       &lt NUM DEL     &lt NUM RET   &mt RSHFT SPACE  &lt SYM ESC
 )
 
 ZMK_LAYER(number_layer,
     &mt LGUI FR_0   &none  &kp FR_EQL   &kp FR_PLUS  &kp FR_MINS  &kp FR_EURO     &none     &kp FR_7  &kp FR_8  &kp FR_9  &none  &none
     &mt LCTRL FR_0  &none  &kp FR_PERC  &kp FR_ASTR  &kp FR_SLSH  &kp FR_DLR      &none     &kp FR_4  &kp FR_5  &kp FR_6  &none  &mt RCTRL FR_0
     &mt LALT FR_0   &none  &kp FR_CURR   &kp FR_DOT   &kp FR_COMM  &kp FR_PND      &none     &kp FR_1  &kp FR_2  &kp FR_3  &none  &mt RALT FR_0
-                                        &lt ADJ TAB  &trans       &trans          &trans    &kp FR_0  &lt ADJ DEL
+                                        &lt ADJ TAB  &trans       &trans          &trans    &kp FR_0  &lt ADJ ESC
 )
 
 ZMK_LAYER(symbol_layer,
     &mt LGUI FR_0   &none  &none  &parentheses     &dbquotes   &kp C_BRI_UP       &kp C_VOL_UP  &kp HOME  &kp UP_ARROW     &kp PG_UP  &kp SLCK         &kp CLCK
     &mt LCTRL FR_0  &none  &none  &squarebrackets  &sgquotes   &kp C_BRI_MIN      &kp C_MUTE    &kp LEFT  &kp DOWN         &kp RIGHT  &kp INS          &mt RCTRL K_APP
     &kp LALT        &none  &none  &curlybrackets   &backticks  &kp C_BRI_DN       &kp C_VOL_DN  &kp END   &kp PRINTSCREEN  &kp PG_DN  &kp PAUSE_BREAK  &kp RALT
-                                                &trans     &trans     &lt ADJ RET      &lt ADJ ESC   &trans    &trans
+                                                &trans     &trans     &lt ADJ DEL      &lt ADJ RET   &trans    &trans
 )
 
 ZMK_LAYER(adjust_layer,
