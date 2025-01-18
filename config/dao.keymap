@@ -225,6 +225,14 @@ ZMK_HOLD_TAP(rh_pht,
     hold-trigger-on-release;
     bindings = <&kp>, <&kp>;
 )
+ZMK_HOLD_TAP(lh_pht_squarebrackets,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    require-prior-idle-ms = <150>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;
+    bindings = <&kp>, <&kp>;
+)
 
 / {
     chosen {
@@ -249,10 +257,10 @@ ZMK_LAYER(number_layer,
 ) 
 
 ZMK_LAYER(symbol_layer,
-    &none  &none  &kp C_BRI_UP   &parentheses     &dbquotes   &kp C_VOL_UP     &kp SLCK      &kp HOME  &kp UP_ARROW     &kp PG_UP  &none  &none
-    &none  &none  &kp C_BRI_MIN  &squarebrackets  &sgquotes   &kp C_MUTE       &kp CLCK      &kp LEFT  &kp DOWN         &kp RIGHT  &none  &none
-    &none  &none  &kp C_BRI_DN   &curlybrackets   &backticks  &kp C_VOL_DN     &none         &kp END   &kp PRINTSCREEN  &kp PG_DN  &none  &none
-                                 &trans           &trans      &lt ADJ DEL      &lt ADJ RET   &trans    &trans
+    &none  &none  &kp C_BRI_UP            &parentheses                   &dbquotes                 &kp C_VOL_UP     &kp SLCK      &kp HOME  &kp UP_ARROW     &kp PG_UP  &none  &none
+    &none  &none  &kp C_BRI_MIN           &lh_pht_squarebrackets LCTRL FR_B          &sgquotes                 &kp C_MUTE       &kp CLCK      &kp LEFT  &kp DOWN         &kp RIGHT  &none  &none
+    &none  &none  &kp C_BRI_DN            &curlybrackets                 &backticks                &kp C_VOL_DN     &none         &kp END   &kp PRINTSCREEN  &kp PG_DN  &none  &none
+                                          &trans                         &trans                    &lt ADJ DEL      &lt ADJ RET   &trans    &trans
 )
 
 ZMK_LAYER(adjust_layer,
