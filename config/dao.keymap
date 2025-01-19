@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 #include "../zmk-helpers/include/zmk-helpers/helper.h"
 #include "../zmk-helpers/include/zmk-helpers/key-labels/42.h"
 #include "../zmk-helpers/include/zmk-helpers/unicode-chars/french.dtsi"
@@ -229,8 +230,8 @@ ZMK_LAYER(symbol_layer,
 )
 
 ZMK_LAYER(adjust_layer,
-    &none  &none  &none  &none   &none   &none     &none   &none   &none  &none  &none  &none
-    &none  &none  &none  &none   &none   &none     &none   &none   &none  &none  &none  &none
+    &none  &none  &none  &none   &none   &none     &none   &none   &mmv MOVE_UP  &none  &none  &none
+    &none  &none  &none  &none   &none   &none     &none   &none   &mmv MOVE_DOWN  &none  &none  &none
     &none  &none  &none  &none   &none   &none     &none   &none   &none  &none  &none  &none
                          &trans  &none   &trans    &trans  &none   &trans
 )
