@@ -20,13 +20,10 @@
 #define NUM 1
 #define SYM 2
 #define ADJ 3
-#define DLD 4
-#define DRD 5
-#define DLG 6
-#define DRG 7
-#define DLC 8
-#define DRC 9
-#define DLA 10
+#define DDI 4
+#define DGR 5
+#define DCI 6
+#define DAC 7
 
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5  // left-hand keys
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // right-hand keys
@@ -209,7 +206,7 @@ ZMK_HOLD_TAP(lh_pht_sgquotes,
 };
 
 ZMK_LAYER(default_layer,
-    &kp FR_SUP2   &lt DLD FR_Q        &lt DLG FR_W        &lt DLC FR_F         &lt DLA FR_P         &kp FR_B        &kp FR_J      &kp FR_L             &lt DRC FR_U         &lt DRG FR_Y        &custo_exlm         &none
+    &kp FR_SUP2   &lt DDI FR_Q        &lt DGR FR_W        &lt DCI FR_F         &lt DAC FR_P         &kp FR_B        &kp FR_J      &kp FR_L             &lt DCI FR_U         &lt DGR FR_Y        &custo_exlm         &none
     &kp FR_QUOT   &lh_pht LGUI FR_A   &lh_pht LALT FR_R   &lh_pht LCTRL FR_S   &lh_pht LSHFT FR_T   &kp FR_G        &kp FR_K      &rh_pht RSHFT FR_N   &rh_pht RCTRL FR_E   &rh_pht RALT FR_I   &rh_pht RGUI FR_O   &none
     &none         &kp FR_Z            &kp FR_X            &mt FR_CCED FR_C     &kp FR_D             &kp FR_V        &kp FR_M      &kp FR_H             &custo_comm          &custo_scln         &custo_coln         &none
                                                           &lt SYM TAB          &mt LSHFT BSPC       &lt NUM DEL     &lt NUM RET   &mt RSHFT SPACE      &lt SYM ESC
@@ -236,49 +233,28 @@ ZMK_LAYER(adjust_layer,
                          &trans  &none   &trans    &trans  &none   &trans
 )
 
-ZMK_LAYER(diac_ldiae,
+ZMK_LAYER(diac_diae,
     ______   ______   ______   ______   ______   ______     ______   ______   &u_diae  ______   ______   ______
     ______   &a_diae  ______   ______   ______   ______     ______   ______   &e_diae  &i_diae  &o_diae  ______
     ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
                                ______   ______   ______     ______   ______   ______
 )
 
-ZMK_LAYER(diac_rdiae,
-    ______   ______   ______   ______   ______   ______     ______   ______   &u_diae  ______   ______   ______
-    ______   &a_diae  ______   ______   ______   ______     ______   ______   &e_diae  &i_diae  &o_diae  ______
-    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
-                               ______   ______   ______     ______   ______   ______
+ZMK_LAYER(diac_grav,
+    ______   ______        ______   ______   ______   ______     ______   ______   &kp FR_UGRV   ______   ______   ______
+    ______   &kp FR_AGRV   ______   ______   ______   ______     ______   ______   &kp FR_EGRV   ______   ______   ______
+    ______   ______        ______   ______   ______   ______     ______   ______   ______        ______   ______   ______
+                                    ______   ______   ______     ______   ______   ______
 )
 
-ZMK_LAYER(diac_lgrav,
-    ______   ______        ______   ______   ______   ______     ______   ______        &kp FR_UGRV   ______   ______   ______
-    ______   &kp FR_AGRV   ______   ______   ______   ______     ______   &kp FR_EGRV   ______        ______   ______   ______
-    ______   ______        ______   ______   ______   ______     ______   ______        ______        ______   ______   ______
-                                    ______   ______   ______     ______   ______        ______
-)
-
-ZMK_LAYER(diac_rgrav,
-    ______   ______        ______   ______   ______   ______     ______   ______        &kp FR_UGRV   ______   ______   ______
-    ______   &kp FR_AGRV   ______   ______   ______   ______     ______   &kp FR_EGRV   ______        ______   ______   ______
-    ______   ______        ______   ______   ______   ______     ______   ______        ______        ______   ______   ______
-                                    ______   ______   ______     ______   ______        ______
-)
-
-ZMK_LAYER(diac_lcirc,
+ZMK_LAYER(diac_circ,
     ______   ______   ______   ______   ______   ______     ______   ______   &u_circ  ______   ______   ______
     ______   &a_circ  ______   ______   ______   ______     ______   ______   &e_circ  &i_circ  &o_circ  ______
     ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
                                ______   ______   ______     ______   ______   ______
 )
 
-ZMK_LAYER(diac_rcirc,
-    ______   ______   ______   ______   ______   ______     ______   ______   &u_circ  ______   ______   ______
-    ______   &a_circ  ______   ______   ______   ______     ______   ______   &e_circ  &i_circ  &o_circ  ______
-    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
-                               ______   ______   ______     ______   ______   ______
-)
-
-ZMK_LAYER(diac_lacut,
+ZMK_LAYER(diac_acut,
     ______   ______   ______   ______   ______   ______     ______   ______   ______        ______   ______   ______
     ______   ______   ______   ______   ______   ______     ______   ______   &kp FR_EACU   ______   ______   ______
     ______   ______   ______   ______   ______   ______     ______   ______   ______        ______   ______   ______
