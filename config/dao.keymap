@@ -24,6 +24,12 @@
 #define DGR 5
 #define DCI 6
 #define DAC 7
+#define AZE 8
+#define ADDI 9
+#define ADGR 10
+#define ADCI 11
+#define ADAC 12
+
 
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5  // left-hand keys
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // right-hand keys
@@ -227,10 +233,10 @@ ZMK_LAYER(symbol_layer,
 )
 
 ZMK_LAYER(adjust_layer,
-    &none  &none  &none       &none         &none         &none      &none   &none  &none  &none  &none  &none
-    &none  &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &none      &none   &none  &none  &none  &none  &none
-    &none  &none  &none       &none         &none         &none      &none   &none  &none  &none  &none  &none
-                              &trans        &none         &trans     &trans  &none  &trans
+    &none  &none  &none       &none         &none         &none      &none   &none     &none     &none  &none  &none
+    &none  &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &none      &none   &tog AZE  &tog DEF  &none  &none  &none
+    &none  &none  &none       &none         &none         &none      &none   &none     &none     &none  &none  &none
+                              &trans        &none         &trans     &trans  &none     &trans
 )
 
 ZMK_LAYER(diac_diae,
@@ -259,4 +265,38 @@ ZMK_LAYER(diac_acut,
     ______   ______   ______   ______   ______   ______     ______   ______   &kp FR_EACU   ______   ______   ______
     ______   ______   ______   ______   ______   ______     ______   ______   ______        ______   ______   ______
                                ______   ______   ______     ______   ______   ______
+)
+
+ZMK_LAYER(azerty_layer,
+    &kp FR_SUP2   &lt ADDI FR_A       &lt ADGR FR_Z       &lt ADCI FR_E        &lt ADAC FR_R        &kp FR_T        &kp FR_Y      &lt ADGR FR_U        &lt ADCI FR_I        &lt ADGR FR_O       &kp FR_P            &custo_exlm
+    &kp FR_QUOT   &lh_pht LGUI FR_Q   &lh_pht LALT FR_S   &lh_pht LCTRL FR_D   &lh_pht LSHFT FR_F   &kp FR_G        &kp FR_H      &rh_pht RSHFT FR_J   &rh_pht RCTRL FR_K   &rh_pht RALT FR_L   &rh_pht RGUI FR_M   &none
+    &none         &kp FR_W            &kp FR_X            &mt FR_CCED FR_C     &kp FR_V             &kp FR_V        &kp FR_B      &kp FR_N             &custo_comm          &custo_scln         &custo_coln         &none
+                                                          &lt SYM TAB          &mt LSHFT BSPC       &lt NUM DEL     &lt NUM RET   &mt RSHFT SPACE      &lt SYM ESC
+)
+
+ZMK_LAYER(azerty_diac_diae,
+    ______   &a_diae  ______   &e_diae  ______   ______     ______   &u_diae  &i_diae  &o_diae  ______   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+                               ______   ______   ______     ______   ______   ______
+)
+
+ZMK_LAYER(azerty_diac_grav,
+    ______   &kp FR_AGRV  ______   &kp FR_EGRV  ______   ______     ______   &kp FR_UGRV  ______   ______   ______   ______
+    ______   ______       ______   ______       ______   ______     ______   ______       ______   ______   ______   ______
+                                   ______       ______   ______     ______   ______       ______
+)
+
+ZMK_LAYER(azerty_diac_circ,
+    ______   &a_circ  ______   &e_circ  ______   ______     ______   &u_circ  &i_circ  &o_circ  ______   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+    ______   ______   ______   ______   ______   ______     ______   ______   ______   ______   ______   ______
+                               ______   ______   ______     ______   ______   ______
+)
+
+ZMK_LAYER(azerty_diac_acut,
+    ______   ______   ______   &kp FR_EACU  ______   ______     ______   ______   ______   ______   ______   ______
+    ______   ______   ______   ______       ______   ______     ______   ______   ______   ______   ______   ______
+    ______   ______   ______   ______       ______   ______     ______   ______   ______   ______   ______   ______
+                               ______       ______   ______     ______   ______   ______
 )
