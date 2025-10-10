@@ -1,5 +1,8 @@
+# https://github.com/zmkfirmware/unified-zmk-config-template/blob/main/.github/workflows/build.yml
+
+name: Build ZMK firmware
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: urob/zmk/.github/workflows/build-user-config.yml@30eb20b76ee5b7a9c59da683459a1c2695348d37
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
