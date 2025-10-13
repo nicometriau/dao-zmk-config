@@ -14,6 +14,8 @@ build:
 run:
 	@echo "🚀 Running $(IMAGE_NAME):$(TAG)..."
 	docker run --rm \
+		-v ./config:/app/config \
+		-v ./zmk-helpers:/app/zmk-helpers \
 		-v ./build.yaml:/app/build.yaml \
 		-v ./build.sh:/app/build.sh \
 		-v ./build:/app/build \

@@ -19,9 +19,5 @@ RUN west init -l config && \
     west update && \
     west zephyr-export
 
-# Copy repository contents into container
-COPY config config
-COPY zmk-helpers zmk-helpers
-
 # Default entrypoint (list build results)
 CMD ["bash", "-c", "./build.sh"]
